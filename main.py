@@ -47,7 +47,7 @@ newegg = Newegg(2, 36)
 #         r = await get_data(newegg)
 #         self.assertGreater(len(r), 0)
 
-API_TOKEN = '6462782345:AAF9DDvM-pgtzXLZTx_cNycFLlNAGd09RHo'
+API_TOKEN = 'I can find it in the botfather chat'
 
 # setting up bot
 bot = Bot(token=API_TOKEN)
