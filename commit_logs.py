@@ -29,10 +29,6 @@ def append_random_char(path):
 def run_git(args, env=None):
     subprocess.run(["git", *args], check=True, env=env)
 
-def current_branch():
-    out = subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"], text=True)
-    return out.strip()
-
 def commit_with_date(commit_date_iso, msg):
     env = os.environ.copy()
     env["GIT_AUTHOR_DATE"] = commit_date_iso
@@ -48,7 +44,7 @@ def main():
     subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], check=True, stdout=subprocess.DEVNULL)
 
     ensure_file_exists(TEXT_FILE)
-    branch = current_branch()
+    branch = "main"
     tz = datetime.now().astimezone().strftime("%z")
 
     today = date.today()
@@ -68,7 +64,7 @@ def main():
             log.write(f"{d.isoformat()} {cid} {randmsg}\n")
             log.flush()
 
-            run_git(["push", REMOTE_NAME, branch])
+            run_git(["push"])
             time.sleep(0.5)
 
             d += timedelta(days=2)
