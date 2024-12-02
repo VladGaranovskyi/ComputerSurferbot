@@ -52,7 +52,7 @@ def main():
 
     with open("commit_ids.txt", "a", encoding="utf-8") as log:
         while d <= today:
-            commit_dt = datetime(d.year, d.month, d.day, random.randint(12, 24), random.randint(1, 50), random.randint(1, 50))
+            commit_dt = datetime(d.year, d.month, d.day, random.randint(9, 23), random.randint(1, 50), random.randint(1, 50))
             commit_date_iso = commit_dt.strftime(f"%Y-%m-%d %H:%M:%S {tz}")
 
             randch = append_random_char(TEXT_FILE)
