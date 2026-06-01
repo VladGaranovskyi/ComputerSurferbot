@@ -7,7 +7,7 @@ import string
 from datetime import date, datetime, timedelta
 
 # ---------- Config ----------
-START_DATE = date(2026, 8, 1)      # inclusive
+START_DATE = date(2026, 6, 1)      # inclusive
 TEXT_FILE = "notes.txt"             # file to touch
 # ----------------------------
 
