@@ -49,7 +49,7 @@ def main():
 
     with open("commit_ids.txt", "a", encoding="utf-8") as log:
         while d <= today:
-            n_commits = random.randint(0, 6)
+            n_commits = random.randint(0, 8)
             if n_commits - 2 > 0:
                 n_commits -= 2
                 for _ in range(n_commits):
